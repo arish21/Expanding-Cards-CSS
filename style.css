@@ -1,0 +1,65 @@
+@import url("https://fonts.google.com/specimen/Poppins?query=popp");
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background: #111111;
+}
+
+.container{
+    display: contents;
+    width: 90vw;
+}
+
+.panel{
+    background-size: auto 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+    border-radius: 25px; /* Defines the roundness of borders of the item */
+    color: burlywood; /* Define the color of the text */
+    cursor: pointer; /* Used to define the mouse pointer when hovered over item */
+    flex: 0.3; /* Defines the shrink and grow factor */
+    margin: 10px;
+    position: sticky;
+    transition: flex 0.1s ease-in-out;
+    -webkit-transition: all 400ms ease-in;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.1s ease-in 0.4s;
+}
+
+@media (max-width: 400px){
+    .container{
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
